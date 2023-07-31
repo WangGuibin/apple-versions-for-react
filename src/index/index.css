@@ -1,0 +1,46 @@
+.card {
+    position: relative;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    background:
+        /*linear-gradient(red,yellow,blue)
+    //radial-gradient(circle, orange, red);*/
+        repeating-linear-gradient(135deg, gold, white 5px);
+    z-index: 1;
+}
+
+/* mask搞透明 + 渐变 和节点的背景渐变进行交错 形成一个背景纹理 看起来就比较有王者之气 */
+.card::after {
+    z-index: -1;
+    position: absolute;
+    content: '';
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(45deg, gold, white 5px);
+    mask: linear-gradient(#000, transparent 100%);
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    transform: scale3d(0.99, 0.99, 1.0);
+    transition: all 1s;
+}
+
+.title-text {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10 0 10 0;
+}
+
+.body-text {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 0 5px 0;
+}

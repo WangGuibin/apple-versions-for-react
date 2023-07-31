@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.bg {
+  background: repeating-linear-gradient(120deg, #eee, #fff 5px);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50vw;
+  min-width: 375px;
+  margin: 0 auto
+}
